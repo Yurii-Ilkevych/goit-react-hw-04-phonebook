@@ -15,6 +15,7 @@ export default function App() {
     }
     setContacts(JSON.parse(contacts));
   }, []);
+
   useEffect(() => {
     if (contacts.length > 0) {
       localStorage.setItem('contacts', JSON.stringify(contacts));

@@ -18,12 +18,16 @@ function ContactForm({ onForm }) {
   };
 
   const handleValue = evt => {
-    const { value } = evt.currentTarget;
-    if (evt.currentTarget.name === 'name') {
-      setName(value);
-    }
-    if (evt.currentTarget.name === 'number') {
-      setNumber(value);
+    const { name, value } = evt.currentTarget;
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
+      case 'number':
+        setNumber(value);
+        break;
+      default:
+        return;
     }
   };
 
